@@ -314,9 +314,17 @@
             </div>
 
           </div>
-
+          @if($message = Session::get('success'))
+  					<div class="alert alert-success">
+  						<button type="button" class="close float-left" data-dismiss="alert" aria-label="Close">
+  							<span aria-hidden="true">&times;</span>
+  						</button>
+  						<p class="text-right">{{ $message }}</p>
+  					</div>
+  					@endif
           <div class="col-lg-6">
             <form action="forms/contact.php" method="post" role="form" class="php-email-form" >
+            @csrf
               <div class="row">
                 <div class="col form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Name" required>
