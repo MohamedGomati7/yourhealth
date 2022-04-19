@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMail;
+
 
 class indexController extends Controller
 {
@@ -17,7 +20,7 @@ class indexController extends Controller
                       'subject'  => $request->subject,
                       'message'  => $request->message);
   
-        Mail::to('safashomakhi@gmail.com')->send(new SendMail($data));
+        Mail::to('Safashomakhi@gmail.com')->send(new sendMail($data));
         return back()->with('success','تم الارسال بنجاح , شكرا لك لتواصلك معنا ');
       }
   

@@ -323,7 +323,9 @@
   					</div>
   					@endif
           <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form" >
+            <form action="{{ route('sendContactMailMessage')}}" method="post" >
+            <!-- <form action="" method="post"> -->
+
             @csrf
               <div class="row">
                 <div class="col form-group">
